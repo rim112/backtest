@@ -219,8 +219,7 @@ public class RestController {
     String destination=body.get("destination");
     String username=body.get("username");
     int note=Integer.parseInt(body.get("note"));
-    String dateevaluation=body.get("dateevaluation");
-    return evaluationRepository.save(new Eval(destination,username,note,dateevaluation));
+    return evaluationRepository.save(new Eval(destination,username,note));
      }
     @DeleteMapping("/eval/{Id}") 	
     public boolean deleteeval(@PathVariable String Id) {

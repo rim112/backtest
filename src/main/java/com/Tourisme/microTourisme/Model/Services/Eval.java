@@ -1,10 +1,14 @@
 package com.Tourisme.microTourisme.Model.Services;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.data.annotation.CreatedDate;
 
 @Entity
 @Table(name = "eval")
@@ -16,7 +20,11 @@ public class Eval{
 		private String username;
 		private String destination;
 		private int note;
+		@CreatedDate
+		@Column(name = "dateevaluation",updatable = false)
+		@CreationTimestamp
 		private String dateevaluation;
+		
 	    public Eval() {}
 	    public Eval(int ideval,String destination,String username,int note,String dateevaluation)
 	    {this.ideval=ideval;
@@ -62,12 +70,11 @@ public class Eval{
 	        ",destination=" +destination+ 
 	        ",note="+note+",DateEvaluation="+dateevaluation+"}";
 	    }
-		public Eval(String username, String destination, int note, String dateevaluation) {
+		public Eval(String username, String destination, int note) {
 			super();
 			this.username = username;
 			this.destination = destination;
 			this.note = note;
-			this.dateevaluation = dateevaluation;
 		}
 		
 	}
