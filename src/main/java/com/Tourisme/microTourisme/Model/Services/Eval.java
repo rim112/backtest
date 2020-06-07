@@ -1,5 +1,7 @@
 package com.Tourisme.microTourisme.Model.Services;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,10 +25,10 @@ public class Eval{
 		@CreatedDate
 		@Column(name = "dateevaluation",updatable = false)
 		@CreationTimestamp
-		private String dateevaluation;
+		private Date dateevaluation;
 		
 	    public Eval() {}
-	    public Eval(int ideval,String destination,String username,int note,String dateevaluation)
+	    public Eval(int ideval,String destination,String username,int note,Date dateevaluation)
 	    {this.ideval=ideval;
 	    this.destination=destination;
 	    this.username=username;
@@ -57,10 +59,10 @@ public class Eval{
 		public void setnote(int note) {
 			this.note = note;
 		}
-		public String getdateevaluation() {
+		public Date getdateevaluation() {
 			return dateevaluation;
 		}
-		public void setdateevaluation(String dateevaluation) {
+		public void setdateevaluation(Date dateevaluation) {
 			this.dateevaluation=dateevaluation;
 		}
 		@Override
