@@ -62,5 +62,13 @@ public class Eval{
 	        ",destination=" +destination+ 
 	        ",note="+note+",DateEvaluation="+dateevaluation+"}";
 	    }
+		public Eval(String username, String destination, int note, String dateevaluation) {
+			super();
+			this.username = username;
+			this.destination = destination;
+			this.note = note;
+			this.dateevaluation = dateevaluation;
+		}
+		
 	}
 

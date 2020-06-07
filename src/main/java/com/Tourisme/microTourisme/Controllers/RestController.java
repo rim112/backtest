@@ -215,12 +215,12 @@ public class RestController {
     }
     @PostMapping("/eval")
     public Eval createeval(@RequestBody Map<String,String> body)
-    {int ideval=Integer.parseInt(body.get("ideval"));
+    {
     String destination=body.get("destination");
     String username=body.get("username");
     int note=Integer.parseInt(body.get("note"));
     String dateevaluation=body.get("dateevaluation");
-    return evaluationRepository.save(new Eval(ideval,destination,username,note,dateevaluation));
+    return evaluationRepository.save(new Eval(destination,username,note,dateevaluation));
      }
     @DeleteMapping("/eval/{Id}") 	
     public boolean deleteeval(@PathVariable String Id) {
